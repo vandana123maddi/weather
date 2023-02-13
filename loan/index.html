@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Loan Calculator </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <script src="main.js"></script>
+</head>
+<body onload="run();">
+    <!-- Parent-Container -->
+    <div class="parent-container"> <!-- Child-Container -->
+        <div class="child-container"> <!-- Child-Boxes-->
+            <div class="box1">
+                <span class="borrowText"> I would like to borrow: </span>
+                <span id="mediaQ">
+                <span class="currency">
+                <input type="number" class="borrowInput" id="borrowInput" onchange="moveSlider();" min="100000" max="2000000" maxlength="20"/> 
+                </span>
+                </span>
+                <!-- remove break tag later-->
+                <br/> <br/>
+                <!-- Slider and Buttons -->
+                <div>
+                <button class="negative" id="negative" onclick="decrease();"> - </button>
+                <span class="centerSlider">
+                <input type="range" class="slider" min="100000" max="2000000" value="100000" onchange="moveTextfield();" id="sliderOne"/>
+                </span>
+                <button class="positive" id="positive" onclick="increase();"> + </button>
+                </div>
+            </div>
+            <div class="box2">
+                <div class="box2b">
+                <div class="tp"> Total Payments </div>
+                <div id="totalPayments"> </div>
+                <div class="mp"> Monthly Payments </div>
+                <div id="monthlyPayments"> </div>
+                <div class="if"> Interest & Fees </div>
+                <div id="interestFees"> </div>
+                <div class="btn-parent">
+                <button class="btn"> Apply Now</button>
+                </div>
+                </div>
+            </div>
+            <div class="box3">
+                <span class="monthText"> And pay it back over: </span> 
+                <span class="moveMonth">
+                <input type="number" class="borrowInput" id="inputMonth" onchange="moveMonthSlider();"/>
+                <!-- remove break tag later-->
+                <span class="mmonth"> Months </span>
+                </span>
+                <br/> <br/>
+                <!-- Slider and Buttons -->
+                <div>
+                <button class="negative" id="negativeMonth" onclick="reduceMonth();"> - </button>
+                <input type="range" min="1" max="60" value="1" id="sliderTwo" onchange="monthSlide();"/>
+                <button class="positive" id="positiveMonth" onclick="increaseMonth();"> + </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
